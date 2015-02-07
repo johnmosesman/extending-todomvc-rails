@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :todos, except: [:new, :edit]
-  resources :lists, except: [:new, :edit]
+
+  namespace :api do
+    resources :todos, except: [:new, :edit]
+    resources :lists, except: [:new, :edit]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
